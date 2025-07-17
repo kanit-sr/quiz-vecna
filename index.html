@@ -151,144 +151,124 @@
         <div id="quiz-content-en" style="display:none;">
             <h1>The Whispers of the Loom: Threads of Your Trial</h1>
             <div id="quiz-intro-en">
-            <p>
-                Close your eyes and listen to the faint whispers from the fabric of reality. The threads of fate are being woven. These are not mere questions, but unique threads that will shape your path and the trials you must face in the coming great war.
-            </p>
-            <input type="text" id="playerNameEn" class="player-name-input" placeholder="Enter your character's name (e.g. Kelem, Colobunthus)">
+                <p>
+                    Close your eyes and listen to the faint whispers from the fabric of reality. The threads of fate are being woven. These are not mere questions, but unique threads that will shape your path and the trials you must face in the coming great war.
+                </p>
+                <input type="text" id="playerNameEn" class="player-name-input" placeholder="Enter your character's name (e.g. Kelem, Colobunthus)">
             </div>
             <form id="quizFormEn">
-            <h2>1. When starlight fades in the abyss of ruin, what spark do you hold deep within your heart?</h2>
-            <div class="question-block">
-                <label class="option-label">
-                <input type="radio" name="q1en" value="A" required>
-                A. The ember of compassion that shields another's pain.
-                </label>
-                <label class="option-label">
-                <input type="radio" name="q1en" value="B">
-                B. The flame of insight that unlocks secrets unseen.
-                </label>
-                <label class="option-label">
-                <input type="radio" name="q1en" value="C">
-                C. The reckless power that defies all heaven's reign.
-                </label>
-                <label class="option-label">
-                <input type="radio" name="q1en" value="D">
-                D. The ancient memory that guides you through the fray.
-                </label>
-            </div>
-            <h2>2. A whisper's voice tempts you to drink, to ascend beyond. What essence will you refuse to surrender?</h2>
-            <div class="question-block">
-                <label class="option-label">
-                <input type="radio" name="q2en" value="A" required>
-                A. The radiant innocence of youth's bright dawn.
-                </label>
-                <label class="option-label">
-                <input type="radio" name="q2en" value="B">
-                B. The silent vow that two hearts have forever drawn.
-                </label>
-                <label class="option-label">
-                <input type="radio" name="q2en" value="C">
-                C. The fierce will that defines your very core.
-                </label>
-                <label class="option-label">
-                <input type="radio" name="q2en" value="D">
-                D. The raw strength that built you from life's rugged shore.
-                </label>
-            </div>
-            <h2>3. Before a fractured mirror of eternity, what vision greets your waking soul?</h2>
-            <div class="question-block">
-                <label class="option-label">
-                <input type="radio" name="q3en" value="A" required>
-                A. A veiled silhouette draped in mystery's quiet cloak.
-                </label>
-                <label class="option-label">
-                <input type="radio" name="q3en" value="B">
-                B. A seat of power where echoes assert their yoke.
-                </label>
-                <label class="option-label">
-                <input type="radio" name="q3en" value="C">
-                C. A guiding light of hope that pierces through the void.
-                </label>
-                <label class="option-label">
-                <input type="radio" name="q3en" value="D">
-                D. A boundless abyss where all stars are destroyed.
-                </label>
-            </div>
-            <h2>4. When your comrade's breath falters beneath a godless blade, how do you mend the final thread?</h2>
-            <div class="question-block">
-                <label class="option-label">
-                <input type="radio" name="q4en" value="A" required>
-                A. By charging forth, a shield against the coming dread.
-                </label>
-                <label class="option-label">
-                <input type="radio" name="q4en" value="B">
-                B. By unleashing ancient magic, wrath upon the night.
-                </label>
-                <label class="option-label">
-                <input type="radio" name="q4en" value="C">
-                C. By bargaining with Death, holding breath in the fading light.
-                </label>
-                <label class="option-label">
-                <input type="radio" name="q4en" value="D">
-                D. By recalling every shared moment, like a mournful song.
-                </label>
-            </div>
-            <h2>5. A shattered tome proclaims: 'Only that which bleeds true endures.' How do you answer this grim decree?</h2>
-            <div class="question-block">
-                <label class="option-label">
-                <input type="radio" name="q5en" value="A" required>
-                A. You mend your wounds with hope's gleaming artistry.
-                </label>
-                <label class="option-label">
-                <input type="radio" name="q5en" value="B">
-                B. You tear the prophecy, from its paper's lie set free.
-                </label>
-                <label class="option-label">
-                <input type="radio" name="q5en" value="C">
-                C. You master every symbol, till your mind transcends its hold.
-                </label>
-                <label class="option-label">
-                <input type="radio" name="q5en" value="D">
-                D. You burn the script, trusting fate's story yet untold.
-                </label>
-            </div>
-            <h2>6. As the moon's smile cracks and the cosmos sighs undone, what final promise seals your mortal coil?</h2>
-            <div class="question-block">
-                <label class="option-label">
-                <input type="radio" name="q6en" value="A" required>
-                A. "By friends' steadfast eyes, my resolve shall never soil."
-                </label>
-                <label class="option-label">
-                <input type="radio" name="q6en" value="B">
-                B. "By hidden truths unveiled, I'll quell the whispered fright."
-                </label>
-                <label class="option-label">
-                <input type="radio" name="q6en" value="C">
-                C. "By blood's sacred oath, I'll shatter unseen might."
-                </label>
-                <label class="option-label">
-                <input type="radio" name="q6en" value="D">
-                D. "By life and death's eternal dance, I'll rebirth dawn's light."
-                </label>
-            </div>
-            <button type="submit" class="submit-button">Reveal Your Path of Trials</button>
-            </form>
-            <div id="resultsEn" class="hidden results-section">
-            <h2>The Path of Trials for <span id="displayPlayerNameEn"></span></h2>
-            <div class="riddle-text" id="riddleResultEn"></div>
-            <button id="resetButtonEn" class="reset-button">Take the quiz again</button>
-            </div>
-            <div class="mt-8 p-4 bg-gray-100 rounded-lg">
-            <h3 class="font-bold mb-2">🔑 Destiny Key (DM’s secret scroll):</h3>
-            <ul class="list-disc ml-6">
-                <li><b>Mostly A's:</b> The Champion's Boon or Bane</li>
-                <li><b>Mostly B's:</b> The Scholar's Veil</li>
-                <li><b>Mostly C's:</b> The Rebel's Chain</li>
-                <li><b>Mostly D's:</b> The Equinox's Balance</li>
-            </ul>
-            <p class="mt-2 italic">May each riddle's choice ripple through the final hour—and may your players discover both their truth... and their doom. 😈</p>
-            </div>
-        </div>
+                <h2>1. When starlight fades in the abyss of ruin, what spark do you hold deep within your heart?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q1en" value="A" required>
+                        A) The ember of compassion that shields another's pain.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1en" value="B">
+                        B) The flame of insight that unlocks secrets unseen.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1en" value="C">
+                        C) The reckless power that defies all heaven's reign.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1en" value="D">
+                        D) The ancient memory that guides you through the fray.
+                    </label>
+                </div>
+                <h2>2. A whisper's voice tempts you to drink, to ascend beyond. What essence will you refuse to surrender?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q2en" value="A" required>
+                        A) The radiant innocence of youth's bright dawn.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2en" value="B">
+                        B) The silent vow that two hearts have forever drawn.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2en" value="C">
+                        C) The fierce will that defines your very core.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2en" value="D">
+                        D) The raw strength that built you from life's rugged shore.
+                    </label>
+                </div>
+                <h2>3. Before a fractured mirror of eternity, what vision greets your waking soul?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q3en" value="A" required>
+                        A) A veiled silhouette draped in mystery's quiet cloak.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3en" value="B">
+                        B) A seat of power where echoes assert their yoke.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3en" value="C">
+                        C) A guiding light of hope that pierces through the void.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3en" value="D">
+                        D) A boundless abyss where all stars are destroyed.
+                    </label>
+                </div>
+                <h2>4. When your comrade's breath falters beneath a godless blade, how do you mend the final thread?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q4en" value="A" required>
+                        A) By charging forth, a shield against the coming dread.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4en" value="B">
+                        B) By unleashing ancient magic, wrath upon the night.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4en" value="C">
+                        C) By bargaining with Death, holding breath in the fading light.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4en" value="D">
+                        D) By recalling every shared moment, like a mournful song.
+                    </label>
+                </div>
+                <h2>5. A shattered tome proclaims: 'Only that which bleeds true endures.' How do you answer this grim decree?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q5en" value="A" required>
+                        A) You mend your wounds with hope's gleaming artistry.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5en" value="B">
+                        B) You tear the prophecy, from its paper's lie set free.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5en" value="C">
+                        C) You master every symbol, till your mind transcends its hold.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5en" value="D">
+                        D) You burn the script, trusting fate's story yet untold.
+                    </label>
+                </div>
+                <h2>6. As the moon's smile cracks and the cosmos sighs undone, what final promise seals your mortal coil?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q6en" value="A" required>
+                        A) "By friends' steadfast eyes, my resolve shall never soil."
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6en" value="B">
+                        B) "By hidden truths unveiled, I'll quell the whispered fright."
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6en" value="C">
+                        C) "By blood's sacred oath, I'll shatter unseen might."
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6en" value="D">
+                        D) "By life and death's eternal dance, I'll rebirth dawn's light."
                     </label>
                 </div>
                 <button type="submit" class="submit-button">Reveal Your Path of Trials</button>
