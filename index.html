@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เสียงกระซิบจากผืนผ้าแห่งกรรม</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Language Switcher -->
+        <div style="text-align:right; margin-bottom:1rem;">
+            <button id="btn-th" class="submit-button" style="width:auto;display:inline-block;padding:0.5rem 1.2rem;margin-right:0.5rem;">ไทย</button>
+            <button id="btn-en" class="reset-button" style="width:auto;display:inline-block;padding:0.5rem 1.2rem;">English</button>
+        </div>
+        <!-- Quiz Content (Thai and English, only one visible at a time) -->
+        <div id="quiz-content-th">
+            <h1>ปริศนา Eve of Ruin</h1>
+            <div id="quiz-intro">
+                <p>
+                    ให้แต่ละปริศนาและคำตอบของคุณสะท้อนโชคชะตาในห้วงสุดท้ายของโลก—เลือกอย่างตั้งใจ!
+                </p>
+                <input type="text" id="playerName" class="player-name-input" placeholder="โปรดระบุชื่อตัวละครของท่าน (เช่น เคเลม)">
+            </div>
+            <form id="quizForm">
+                <h2>1. เมื่อแสงดาวแตกสลาย ณ ปากเหวแห่งหายนะ ถ่านไฟดวงใดที่คุณกอดไว้แนบอก?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="A" required>
+                        A) ประกายสุริยะที่คุ้มครองหยาดน้ำตาคนแปลกหน้า
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="B">
+                        B) เปลวจันทราที่เยือกเย็นซึ่งอ่านหน้ากระดาษที่ซ่อนอยู่
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="C">
+                        C) เสียงคำรามของไฟป่าที่กล้าท้าทายฟากฟ้า
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="D">
+                        D) แสงเรืองรองอันอ่อนโยนที่ถักทออดีตที่แตกสลาย
+                    </label>
+                </div>
+                <h2>2. เสียงกระซิบเสนอน้ำทิพย์แก่คุณ: จิบเพื่อก้าวข้าม—คุณจะสาดเทแก่นแท้ใดทิ้งไป?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="A" required>
+                        A) ตะเกียงแห่งเสียงหัวเราะในวัยเด็กที่มอดดับไปในราตรี
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="B">
+                        B) คำสาบานที่กระซิบกระซาบระหว่างสองดวงใจที่เงียบงันตลอดไป
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="C">
+                        C) หยาดโลหิตสีแดงฉานจากเจตจำนงแห่งไขกระดูกของคุณเอง
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="D">
+                        D) เหล็กที่ขับขานชีวิตของคุณท่ามกลางการต่อสู้ของมนุษย์
+                    </label>
+                </div>
+                <h2>3. ภายในกระจกเงาแห่งอนันตภาพที่แตกร้าว นิมิตใดที่รอรับจิตวิญญาณที่ตื่นขึ้นของคุณ?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="A" required>
+                        A) ภาพเงาที่ห่มคลุมด้วยเสื้อคลุมเงียบงันแห่งสนธยา
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="B">
+                        B) บัลลังก์กระดูกที่เสียงสะท้อนพบคู่บัลลังก์
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="C">
+                        C) หัตถ์นำทางแห่งรุ่งอรุณที่ต่อต้านความว่างเปล่า
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="D">
+                        D) ท้องฟ้าที่เต็มไปด้วยดวงดาวที่ล่มสลาย มืดมิดไม่มีที่สิ้นสุด
+                    </label>
+                </div>
+                <h2>4. ลมหายใจของสหายคุณรวยรินภายใต้คมดาบที่ไร้พระเจ้า—คุณจะถักทอเส้นด้ายสุดท้ายอย่างไร?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="A" required>
+                        A) ด้วยการก้าวเข้าสู่ภัยคู่กัน โดยชูโล่ขึ้นสูง
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="B">
+                        B) ด้วยการคลี่คลายอักษรรูนแห่งความโกรธแค้นสู่ราตรี
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="C">
+                        C) ด้วยการแลกเปลี่ยนลมหายใจกับดวงตาที่จ้องมองไม่กะพริบของความตาย
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="D">
+                        D) ด้วยการเรียกทุกความทรงจำดุจเพลงโศก
+                    </label>
+                </div>
+                <h2>5. คัมภีร์ที่แตกสลายทำนายว่า: 'มีเพียงสิ่งซึ่งหลั่งเลือดอย่างแท้จริงเท่านั้นที่จะคงอยู่' คุณจะตอบรับพระโองการแห่งหมึกอย่างไร?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="A" required>
+                        A) คุณพันบาดแผลของคุณด้วยริบบิ้นสีทองแห่งความหวัง
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="B">
+                        B) คุณฉีกคำพยากรณ์ให้เป็นอิสระจากคำโกหกของกระดาษ
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="C">
+                        C) คุณเรียนรู้สัญลักษณ์แต่ละตัวจนกว่าจิตใจของคุณจะหลุดพ้น
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="D">
+                        D) คุณเผาต้นฉบับและเชื่อมั่นในชีพจรแห่งโชคชะตา
+                    </label>
+                </div>
+                <h2>6. เมื่อรอยยิ้มของดวงจันทร์แตกร้าวและจักรวาลถอนหายใจราวกับถูกปลดปล่อย คำปฏิญาณใดที่ผนึกร่างมนุษย์ของคุณ?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="A" required>
+                        A) "ด้วยดวงตาอันสดใสของมิตรสหาย ข้าจะยืนหยัดไม่หวั่นไหว"
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="B">
+                        B) "ด้วยความลับที่ปกปิด ข้าจะระงับความหวาดกลัวที่กระซิบกระซาบ"
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="C">
+                        C) "ด้วยสัตย์ปฏิญาณแห่งโลหิตสีแดง ข้าจะทำลายโซ่ตรวนที่มองไม่เห็น"
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="D">
+                        D) "ด้วยการเต้นรำแห่งชีวิตและความตาย ข้าจะกำเนิดรุ่งอรุณขึ้นมาใหม่"
+                    </label>
+                </div>
+                <button type="submit" class="submit-button">เปิดเผยโชคชะตาของคุณ</button>
+            </form>
+            <div id="results" class="hidden results-section">
+                <h2>โชคชะตาของ <span id="displayPlayerName"></span></h2>
+                <div class="riddle-text" id="riddleResult"></div>
+                <button id="resetButton" class="reset-button">ทำแบบทดสอบอีกครั้ง</button>
+            </div>
+        </div>
+        <div id="quiz-content-en" style="display:none;">
+            <h1>The Whispers of the Loom: Threads of Your Trial</h1>
+            <div id="quiz-intro-en">
+                <p>
+                    Close your eyes and listen to the faint whispers from the fabric of reality. The threads of fate are being woven. These are not mere questions, but unique threads that will shape your path and the trials you must face in the coming great war.
+                </p>
+                <input type="text" id="playerNameEn" class="player-name-input" placeholder="Enter your character's name (e.g. Kelem, Colobunthus)">
+            </div>
+            <form id="quizFormEn">
+                <!-- Phase 1: The Nature of Truth -->
+                <h2 class="text-2xl font-semibold mb-4">Chapter 1: The Nature of Truth</h2>
+                <div class="question-block">
+                    <p>1. An ancient secret threatens to expose a great virtuous order. Revealing it could prevent future disaster, but would cause immense suffering now. What do you do?</p>
+                    <label class="option-label">
+                        <input type="radio" name="q1en" value="A" required>
+                        <span>A) Reveal the truth immediately, believing all lies must be exposed, no matter the intent.</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1en" value="B">
+                        <span>B) Try to control the revelation, seeking ways to mitigate harm while letting the truth emerge eventually.</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1en" value="C">
+                        <span>C) Protect the current stability at all costs, believing fragile peace is more important than painful truth.</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1en" value="D">
+                        <span>D) Seek to understand the true source of the secret's power, believing mastery is better than mere exposure or suppression.</span>
+                    </label>
+                </div>
+
+                <div class="question-block">
+                    <p>2. You have discovered a long-lost ancient tome, filled with forbidden magical knowledge - spells and rituals that could turn the tide against the Vecna. Yet, reading it distorts your mind with dark impulses and whispers of deceit. What will you do?</p>
+                    <label class="option-label">
+                        <input type="radio" name="q2en" value="A" required>
+                        <span>A) Consume all the knowledge, trusting in your will to resist the deceit, for the power is too valuable to ignore.</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2en" value="B">
+                        <span>B) Study it cautiously, seeking out ancient counter-rituals or safeguards before delving deeper.</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2en" value="C">
+                        <span>C) Destroy the tome immediately, fearing its corrupting influence on you and others.</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2en" value="D">
+                        <span>D) Share the tome with trusted scholars or allies, believing such dangerous knowledge should be analyzed collectively.</span>
+                    </label>
+                </div>
+
+                <!-- Phase 2: The Weight of Authority -->
+                <h2 class="text-2xl font-semibold mb-4">Chapter 2: The Weight of Authority</h2>
+                <div class="question-block">
+                    <p>3. A highly respected leader, seemingly pure, has commanded you to act against your moral principles, claiming it is for the "greater good" in this time of crisis. What will you do?</p>
+                    <label class="option-label">
+                        <input type="radio" name="q3en" value="A" required>
+                        <span>A) Openly resist the order, standing firm in your principles, even if it means facing the authority directly.</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3en" value="B">
+                        <span>B) Attempt to persuade the leader towards another path, using diplomacy and reason to find an alternative solution.</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3en" value="C">
+                        <span>C) Find a way to follow the order literally without violating your spirit, or subtly undermine the order from within.</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3en" value="D">
+                        <span>D) Question the source of their authority, investigating whether this "respected leader" is as they claim, or being manipulated.</span>
+                    </label>
+                </div>
+
+                <div class="question-block">
+                    <p>4. You witness a powerful ancient being (neither good nor evil) making a pact to grant immense power to a human, in exchange for that human's free will. What do you do?</p>
+                    <label class="option-label">
+                        <input type="radio" name="q4en" value="A" required>
+                        <span>A) Intervene to stop the pact, believing no power is worth the sacrifice of one's freedom.</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4en" value="B">
+                        <span>B) Attempt to negotiate a different set of terms for the human, seeking a pact with lesser sacrifices.</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4en" value="C">
+                        <span>C) Observe and learn from the interaction, trying to understand the nature of such pacts and how to protect oneself from them.</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4en" value="D">
+                        <span>D) Consider making a pact for yourself, if the being seems willing, even at the cost of potentially worse terms for you.</span>
+                    </label>
+                </div>
+
+                <!-- Phase 3: The Call of Sacrifice -->
+                <h2 class="text-2xl font-semibold mb-4">Chapter 3: The Call of Sacrifice</h2>
+                <div class="question-block">
+                    <p>5. To save a single innocent life, you must sacrifice an irreplaceable, powerful magical item crucial to your mission against Vecna. What will you do?</p>
+                    <label class="option-label">
+                        <input type="radio" name="q5en" value="A" required>
+                        <span>A) Sacrifice the item without hesitation, believing life is always more valuable than any object.</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5en" value="B">
+                        <span>B) Desperately search for an alternative solution, trying to save both the life and the item.</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5en" value="C">
+                        <span>C) Reluctantly sacrifice the life if there's truly no other option, prioritizing the greater good of the mission.</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5en" value="D">
+                        <span>D) Seek ways to gain equivalent power from other sources, to replace the lost item and save the innocent life.</span>
+                    </label>
+                </div>
+
+                <div class="question-block">
+                    <p>6. You are given a choice: one ally must make a terrible personal sacrifice, ensuring victory over a major threat, but destroying their life forever. Or you face a much harder and more uncertain battle, where all of you may perish. What do you choose?</p>
+                    <label class="option-label">
+                        <input type="radio" name="q6en" value="A" required>
+                        <span>A) Support the ally in making the sacrifice, for ultimate victory is worth any price paid by one individual.</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6en" value="B">
+                        <span>B) Refuse the sacrifice and gather the group to enter the harder battle, trusting in your collective strength and responsibility.</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6en" value="C">
+                        <span>C) Seek a way to completely avoid either option, looking for an unexpected third path.</span>
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6en" value="D">
+                        <span>D) Offer to make the sacrifice yourself, if you believe your personal loss would impact less than that of the ally or the group.</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-2 px-4 rounded mt-6 submit-button">Reveal Your Path of Trials</button>
+            </form>
+            <div id="resultsEn" class="hidden results-section">
+                <h2>The Path of Trials for <span id="displayPlayerNameEn"></span></h2>
+                <p>
+                    Based on your choices, the Loom has revealed your riddle of fate:
+                </p>
+                <div class="riddle-text" id="riddleResultEn"></div>
+                <button id="resetButtonEn" class="reset-button">Take the quiz again</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+    // Language Switcher
+    const btnTh = document.getElementById('btn-th');
+    const btnEn = document.getElementById('btn-en');
+    const contentTh = document.getElementById('quiz-content-th');
+    const contentEn = document.getElementById('quiz-content-en');
+    btnTh.addEventListener('click', () => {
+        contentTh.style.display = '';
+        contentEn.style.display = 'none';
+        document.documentElement.lang = 'th';
+    });
+    btnEn.addEventListener('click', () => {
+        contentTh.style.display = 'none';
+        contentEn.style.display = '';
+        document.documentElement.lang = 'en';
+    });
+    </script>
+</body>
+</html>
