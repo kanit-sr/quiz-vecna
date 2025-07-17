@@ -9,16 +9,16 @@ const resetButton = document.getElementById('resetButton');
 // Destiny Key (DM’s secret scroll)
 const fates = {
     A: {
-        riddle: `พรหรือภัยของแชมป์เปี้ยน\n\nคุณคือผู้ปกป้อง ผู้ยืนหยัดต่อสู้เพื่อผู้อื่น แม้ในยามมืดมนที่สุด คุณยังคงเป็นแสงสว่างให้แก่ผู้คนรอบข้าง โชคชะตาของคุณคือการเสียสละและความกล้าหาญ—แต่จงระวัง อย่าให้ภาระของผู้อื่นบดบังหัวใจของตนเอง`
+        riddle: `รุ่งอรุณแห่งผู้พิทักษ์\n\nยามดาราดับแสง โลกร่ำไห้ในเงา\nมีผู้หนึ่งยืนตระหง่าน แสงนำทางให้เหล่าเรา\nแบกรับภาระที่หนักอึ้ง ปกป้องด้วยใจกล้า\nแต่ระวังเถิด ดวงประทีปนี้ อย่าให้มอดดับเพราะน้ำตา`
     },
     B: {
-        riddle: `ม่านแห่งปราชญ์\n\nคุณเป็นผู้แสวงหาความจริงและความลับ แม้ต้องเผชิญกับความมืดหรือความหวาดกลัว คุณจะไม่หยุดค้นหา โชคชะตาของคุณคือปัญญาและการเปิดเผย—แต่จงระวัง อย่าให้ความลับกลายเป็นพันธนาการ`
+        riddle: `นัยน์ตาแห่งผู้รู้แจ้ง\n\nในห้วงลึกแห่งความลับ ที่มืดมิดและซ่อนงำ\nมีดวงตาคู่หนึ่งไม่เคยหลับ ค้นหาความจริงที่ถูกกระทำ\nปัญญาคืออาวุธคมกล้า ไขปริศนาแห่งกาลเวลา\nแต่ระวังเถิด พันธนาการไร้รูปร่าง อาจคุมขังเจ้าตลอดมา`
     },
     C: {
-        riddle: `โซ่ของกบฏ\n\nคุณคือผู้ท้าทายโชคชะตา ไม่ยอมจำนนต่ออำนาจหรือพันธนาการใด ๆ คุณจะต่อสู้เพื่ออิสรภาพของตนเองและผู้อื่น โชคชะตาของคุณคือการเปลี่ยนแปลงและการปลดปล่อย—แต่จงระวัง อย่าให้ไฟแห่งการต่อต้านเผาผลาญทุกสิ่งที่คุณรัก`
+        riddle: `เปลวไฟแห่งผู้ปลดปล่อย\n\nโซ่ตรวนมิอาจผูกมัด จิตวิญญาณผู้ท้าทาย\nกฎเกณฑ์ที่ขัดขวาง คือสิ่งที่ต้องทำลาย\nลุกโชนดุจเปลวเพลิง ปลดปล่อยทุกการคุมขัง\nแต่ระวังเถิด ความร้อนแรงนี้ อาจเผาผลาญแม้แต่ความหวัง`
     },
     D: {
-        riddle: `สมดุลแห่งวิษุวัต\n\nคุณคือผู้เชื่อมโยงอดีต ปัจจุบัน และอนาคต คุณเข้าใจถึงวัฏจักรของชีวิตและความตาย โชคชะตาของคุณคือการฟื้นฟูและการเปลี่ยนผ่าน—แต่จงระวัง อย่าให้ความเฉยชาทำให้คุณพลาดช่วงเวลาแห่งการลงมือ`
+        riddle: `วิถีแห่งผู้ปรับสมดุล\n\nอดีต ปัจจุบัน อนาคต... สานสัมพันธ์เป็นหนึ่งเดียว\nเข้าใจในวัฏจักร กำเนิดและดับลงอย่างเชี่ยวชาญ\nมือนั้นนำพาการเปลี่ยนแปลง ฟื้นคืนสิ่งอันร่วงโรย\nแต่ระวังเถิด ความนิ่งเฉย อาจทำให้โอกาสลอยเลือนไปในโคลนตม`
     }
 };
 
@@ -109,6 +109,140 @@ resetButton.addEventListener('click', function() {
     localStorage.removeItem('vecna_quiz_answers');
     localStorage.removeItem('vecna_quiz_result');
 });
+
+// --- English Quiz Logic ---
+const quizFormEn = document.getElementById('quizFormEn');
+const resultsDivEn = document.getElementById('resultsEn');
+const quizIntroDivEn = document.getElementById('quiz-intro-en');
+const playerNameInputEn = document.getElementById('playerNameEn');
+const displayPlayerNameEn = document.getElementById('displayPlayerNameEn');
+const riddleResultEn = document.getElementById('riddleResultEn');
+const resetButtonEn = document.getElementById('resetButtonEn');
+
+const fatesEn = {
+    A: {
+        riddle: `The Champion's Dawn
+
+When stars grow dim and the world weeps in shadow,
+One stands unyielding, a beacon for all to follow.
+A burden borne with valor, a shield against despair,
+Yet heed this warning: Let not others' weight dim your own heart's flare.`
+    },
+    B: {
+        riddle: `The Seeker's Gaze
+
+In the deepest chasms of secrets, where darkness hides its art,
+A watchful eye never sleeps, seeking truth that's torn apart.
+Wisdom, your sharpest weapon, to unravel time's old plea,
+Yet heed this warning: Let not knowledge bind you, leaving you unfree.`
+    },
+    C: {
+        riddle: `The Rebel's Flame
+
+No chains can shackle a spirit that defies,
+The rules that bind will shatter beneath your cries.
+You blaze like a wildfire, freeing all that's held in thrall,
+Yet heed this warning: Let not your fierce passion consume all.`
+    },
+    D: {
+        riddle: `The Equinox's Balance
+
+Past, present, future... entwined in a single thread,
+You grasp the cycles of life and paths where death has led.
+Your hand guides transformation, restoring what's undone,
+Yet heed this warning: Let not your stillness miss when action must be won.`
+    }
+};
+
+if (quizFormEn) {
+    quizFormEn.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const playerName = playerNameInputEn.value.trim();
+        if (!playerName) {
+            showMessageBox("Please enter your character's name!", "Error");
+            return;
+        }
+
+        const answers = {};
+        for (let i = 1; i <= 6; i++) {
+            const selectedOption = document.querySelector(`input[name="q${i}en"]:checked`);
+            if (!selectedOption) {
+                showMessageBox("Please answer all questions before submitting!", "Error");
+                return;
+            }
+            answers[`q${i}`] = selectedOption.value;
+        }
+
+        const tally = { A: 0, B: 0, C: 0, D: 0 };
+        for (const q in answers) {
+            tally[answers[q]]++;
+        }
+
+        let dominantAnswer = '';
+        let maxCount = -1;
+        let tiedAnswers = [];
+
+        for (const choice in tally) {
+            if (tally[choice] > maxCount) {
+                maxCount = tally[choice];
+                dominantAnswer = choice;
+                tiedAnswers = [choice];
+            } else if (tally[choice] === maxCount) {
+                tiedAnswers.push(choice);
+            }
+        }
+
+        if (tiedAnswers.length > 1) {
+            dominantAnswer = tiedAnswers[0];
+        }
+
+        const fate = fatesEn[dominantAnswer];
+        displayPlayerNameEn.textContent = playerName;
+        riddleResultEn.textContent = fate.riddle;
+
+        // Save to localStorage
+        localStorage.setItem('vecna_quiz_player_en', playerName);
+        localStorage.setItem('vecna_quiz_answers_en', JSON.stringify(answers));
+        localStorage.setItem('vecna_quiz_result_en', dominantAnswer);
+
+        // Add effect to result
+        riddleResultEn.classList.add('animate__animated', 'animate__fadeInUp');
+        setTimeout(() => {
+            riddleResultEn.classList.remove('animate__animated', 'animate__fadeInUp');
+        }, 1200);
+
+        quizFormEn.classList.add('hidden');
+        quizIntroDivEn.classList.add('hidden');
+        resultsDivEn.classList.remove('hidden');
+    });
+
+    // Restore previous result if exists
+    window.addEventListener('DOMContentLoaded', function() {
+        const savedPlayer = localStorage.getItem('vecna_quiz_player_en');
+        const savedResult = localStorage.getItem('vecna_quiz_result_en');
+        if (savedPlayer && savedResult && fatesEn[savedResult]) {
+            displayPlayerNameEn.textContent = savedPlayer;
+            riddleResultEn.textContent = fatesEn[savedResult].riddle;
+            quizFormEn.classList.add('hidden');
+            quizIntroDivEn.classList.add('hidden');
+            resultsDivEn.classList.remove('hidden');
+        }
+    });
+
+    resetButtonEn.addEventListener('click', function() {
+        quizFormEn.reset();
+        playerNameInputEn.value = '';
+        resultsDivEn.classList.add('hidden');
+        quizFormEn.classList.remove('hidden');
+        quizIntroDivEn.classList.remove('hidden');
+        window.scrollTo(0, 0);
+        // Clear localStorage
+        localStorage.removeItem('vecna_quiz_player_en');
+        localStorage.removeItem('vecna_quiz_answers_en');
+        localStorage.removeItem('vecna_quiz_result_en');
+    });
+}
 
 // Custom Message Box Functionality
 function showMessageBox(message, title = "แจ้งเตือน") {
