@@ -1,346 +1,302 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Dolindar Tomb Puzzle - Drag & Drop</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
-  body {
-    margin: 0; padding: 2rem;
-    background: #121212;
-    color: #e0d8c3;
-    font-family: 'Cinzel', serif;
-    display: flex; flex-direction: column; align-items: center; min-height: 100vh;
-  }
-  h1 {
-    letter-spacing: 0.15em; margin-bottom: 1rem;
-    text-shadow: 0 0 10px #5a2e1a;
-  }
-  p {
-    font-style: italic; margin-bottom: 2rem; color: #bfae7e; max-width: 600px; text-align: center;
-  }
-  .puzzle-container {
-    background: #1e1b16;
-    border: 2px solid #5a2e1a;
-    border-radius: 12px;
-    padding: 1.5rem 2rem;
-    max-width: 700px;
-    width: 100%;
-    box-shadow: 0 0 15px #5a2e1a;
-  }
-  .letter-pool, .slots {
-    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
-    margin-bottom: 2rem;
-  }
-  .word-group {
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  .word-label {
-    color: #d7c4a3;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    margin-bottom: 0.3rem;
-    text-transform: uppercase;
-  }
-  .letter {
-    user-select: none;
-    background: #2d2922;
-    border: 1.5px solid #5a2e1a;
-    border-radius: 6px;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 1.6rem;
-    text-align: center;
-    cursor: grab;
-    transition: background 0.3s ease;
-    color: #e0d8c3;
-    font-family: 'Cinzel', serif;
-  }
-  .letter:active {
-    cursor: grabbing;
-    background: #5a2e1a;
-  }
-  .slot {
-    width: 50px;
-    height: 50px;
-    border: 2px dashed #5a2e1a;
-    border-radius: 8px;
-    font-size: 2rem;
-    text-align: center;
-    line-height: 50px;
-    color: #bfae7e;
-    user-select: none;
-    background: #121212;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-  }
-  .slot.hovered {
-    background-color: #5a2e1a;
-    border-color: #7b4a28;
-  }
-  .slot.filled {
-    border-style: solid;
-    color: #6ade87;
-  }
-  button.unlock-btn {
-    background: #5a2e1a;
-    border: none;
-    color: #e0d8c3;
-    font-family: 'Cinzel', serif;
-    font-size: 1.2rem;
-    padding: 0.6rem 1.2rem;
-    cursor: pointer;
-    border-radius: 8px;
-    letter-spacing: 0.1em;
-    transition: background 0.3s ease;
-  }
-  button.unlock-btn:hover {
-    background: #7b4a28;
-  }
-  .result {
-    margin-top: 1.8rem;
-    font-weight: 700;
-    font-size: 1.3rem;
-    letter-spacing: 0.1em;
-    text-align: center;
-    min-height: 1.5em;
-  }
-  .success {
-    color: #6ade87;
-    text-shadow: 0 0 8px #44b34a;
-  }
-  .failure {
-    color: #d25757;
-    text-shadow: 0 0 8px #b22a2a;
-  }
-  footer {
-    margin-top: auto;
-    font-size: 0.8rem;
-    color: #555142;
-    font-style: italic;
-    text-align: center;
-    padding: 1rem 0 0 0;
-    user-select: none;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เสียงกระซิบจากผืนผ้าแห่งกรรม</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<h1>Dolindar Tomb Puzzle</h1>
-<p>Drag letters from the pools below and drop them into the slots to spell <strong>A WORD</strong>.</p>
-
-<div class="puzzle-container" role="main" aria-label="Dolindar Tomb Puzzle">
-
-  <!-- Letter pools by word -->
-  <div id="letter-pools">
-    <div class="word-group" aria-label="Letters from DOLINDAR">
-      <div class="word-label">DOLINDAR</div>
-      <div class="letter-pool" data-word="DOLINDAR">
-        <div class="letter" draggable="true" data-word="DOLINDAR" data-letter="D">D</div>
-        <div class="letter" draggable="true" data-word="DOLINDAR" data-letter="O">O</div>
-        <div class="letter" draggable="true" data-word="DOLINDAR" data-letter="L">L</div>
-        <div class="letter" draggable="true" data-word="DOLINDAR" data-letter="I">I</div>
-        <div class="letter" draggable="true" data-word="DOLINDAR" data-letter="N">N</div>
-        <div class="letter" draggable="true" data-word="DOLINDAR" data-letter="D">D</div>
-        <div class="letter" draggable="true" data-word="DOLINDAR" data-letter="A">A</div>
-        <div class="letter" draggable="true" data-word="DOLINDAR" data-letter="R">R</div>
-      </div>
+    <div class="container">
+        <!-- Language Switcher -->
+        <div style="text-align:right; margin-bottom:1rem;">
+            <button id="btn-th" class="submit-button" style="width:auto;display:inline-block;padding:0.5rem 1.2rem;margin-right:0.5rem;">ไทย</button>
+            <button id="btn-en" class="reset-button" style="width:auto;display:inline-block;padding:0.5rem 1.2rem;">English</button>
+        </div>
+        <!-- Quiz Content (Thai and English, only one visible at a time) -->
+        <div id="quiz-content-th">
+            <h1>เสียงกระซิบจากกี่ทอผ้า: สายใยแห่งการทดสอบ</h1>
+            <div id="quiz-intro">
+                <p>
+                    หลับตาลง... แล้วลองฟังเสียงกระซิบอันแผ่วเบาจากผืนผ้าแห่งความจริงดูสิ สายใยแห่งโชคชะตากำลังถูกถักทอ นี่ไม่ใช่แค่คำถามทั่วไป แต่เป็น เส้นด้ายอันเป็นเอกลักษณ์ ที่จะหล่อหลอมหนทางและบททดสอบที่คุณต้องเผชิญในมหาสงครามที่กำลังจะมาถึง
+                </p>
+                <input type="text" id="playerName" class="player-name-input" placeholder="โปรดระบุชื่อตัวละครของท่าน (เช่น เคเลม)">
+            </div>
+            <form id="quizForm">
+                <h2>1. ยามแสงดาวดับสิ้น ณ ห้วงหายนะ สิ่งใดเล่าที่คุณจะกอดไว้ในใจ?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="A" required>
+                        A) ประกายเมตตาที่ปกป้องใจผู้อื่น
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="B">
+                        B) เปลวปัญญาที่ไขความลับเร้น
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="C">
+                        C) พลังบ้าระห่ำที่ท้าทายสวรรค์
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1" value="D">
+                        D) ความทรงจำเก่าก่อนที่ส่องนำทาง
+                    </label>
+                </div>
+                <h2>2. เสียงกระซิบจากเงามืดเชื้อเชิญให้จิบดื่ม เพื่อก้าวข้ามขีดจำกัด สิ่งใดที่คุณจะไม่ยอมแลก?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="A" required>
+                        A) ความสดใสไร้เดียงสาในวัยเยาว์
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="B">
+                        B) พันธสัญญาใจที่ผูกมัดสองเรา
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="C">
+                        C) เจตจำนงอันแรงกล้าของตนเอง
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2" value="D">
+                        D) ความแกร่งกล้าที่สร้างตัวตน
+                    </label>
+                </div>
+                <h2>3. เบื้องหน้ากระจกเงาแห่งอนันตกาลที่ร้าวราน สิ่งใดปรากฏแก่จิตวิญญาณยามตื่น?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="A" required>
+                        A) เงาลวงตาที่ปกคลุมด้วยความลึกลับ
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="B">
+                        B) อำนาจบาตรใหญ่ที่ปกครองสรรพสิ่ง
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="C">
+                        C) แสงแห่งความหวังที่นำพ้นความมืดมิด
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3" value="D">
+                        D) ห้วงอวกาศอันว่างเปล่าที่กลืนกินทุกสิ่ง
+                    </label>
+                </div>
+                <h2>4. ยามสหายลมหายใจรวยรินใต้คมดาบ สิ่งใดเล่าที่คุณจะทำเพื่อฉุดรั้งชะตา?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="A" required>
+                        A) พุ่งเข้าเผชิญหน้า เคียงข้างภัยอันตราย
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="B">
+                        B) ปล่อยพลังอาคมทำลายล้างสู่รัตติกาล
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="C">
+                        C) ต่อรองกับพญามัจจุราชเพื่อยืดชีวิต
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4" value="D">
+                        D) รำลึกถึงวันวาน ดุจบทเพลงแห่งความอาลัย
+                    </label>
+                </div>
+                <h2>5. คัมภีร์ร้าวรานกล่าวขาน: 'สิ่งซึ่งหลั่งเลือดอย่างแท้จริงจักยั่งยืน' คุณจะตอบโองการนี้เช่นไร?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="A" required>
+                        A) ประคองบาดแผลด้วยหวังอันเรืองรอง
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="B">
+                        B) ฉีกคำทำนายทิ้ง เพื่ออิสรภาพแห่งใจ
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="C">
+                        C) เจาะลึกความรู้จนถึงแก่นแท้แห่งถ้อยคำ
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5" value="D">
+                        D) เผาตำราทิ้ง เชื่อมั่นในโชคชะตาที่ลิขิต
+                    </label>
+                </div>
+                <h2>6. เมื่อจันทราปริร้าว และจักรวาลถอนหายใจ สิ่งใดเล่าคือคำมั่นสุดท้ายของคุณ?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="A" required>
+                        A) "จะยืนหยัดเคียงข้างมิตรสหาย มิเสื่อมคลาย"
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="B">
+                        B) "จะไขความลับที่ซ่อนเร้น เพื่อสยบภัยคุกคาม"
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="C">
+                        C) "จะใช้เลือดเนื้อเป็นเดิมพัน เพื่อทำลายพันธนาการ"
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6" value="D">
+                        D) "จะฟื้นคืนสรรพสิ่ง ดุจการเต้นรำแห่งชีวิตและความตาย"
+                    </label>
+                </div>
+                <button type="submit" class="submit-button">เปิดเผยโชคชะตาของคุณ</button>
+            </form>
+            <div id="results" class="hidden results-section">
+                <h2>โชคชะตาของ <span id="displayPlayerName"></span></h2>
+                <div class="riddle-text" id="riddleResult"></div>
+                <button id="resetButton" class="reset-button">ทำแบบทดสอบอีกครั้ง</button>
+            </div>
+        </div>
+        <div id="quiz-content-en" style="display:none;">
+            <h1>The Whispers of the Loom: Threads of Your Trial</h1>
+            <div id="quiz-intro-en">
+                <p>
+                    Close your eyes and listen to the faint whispers from the fabric of reality. The threads of fate are being woven. These are not mere questions, but unique threads that will shape your path and the trials you must face in the coming great war.
+                </p>
+                <input type="text" id="playerNameEn" class="player-name-input" placeholder="Enter your character's name (e.g. Kelem, Colobunthus)">
+            </div>
+            <form id="quizFormEn">
+                <h2>1. When starlight fades in the abyss of ruin, what spark do you hold deep within your heart?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q1en" value="A" required>
+                        A) The ember of compassion that shields another's pain.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1en" value="B">
+                        B) The flame of insight that unlocks secrets unseen.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1en" value="C">
+                        C) The reckless power that defies all heaven's reign.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q1en" value="D">
+                        D) The ancient memory that guides you through the fray.
+                    </label>
+                </div>
+                <h2>2. A whisper's voice tempts you to drink, to ascend beyond. What essence will you refuse to surrender?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q2en" value="A" required>
+                        A) The radiant innocence of youth's bright dawn.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2en" value="B">
+                        B) The silent vow that two hearts have forever drawn.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2en" value="C">
+                        C) The fierce will that defines your very core.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q2en" value="D">
+                        D) The raw strength that built you from life's rugged shore.
+                    </label>
+                </div>
+                <h2>3. Before a fractured mirror of eternity, what vision greets your waking soul?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q3en" value="A" required>
+                        A) A veiled silhouette draped in mystery's quiet cloak.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3en" value="B">
+                        B) A seat of power where echoes assert their yoke.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3en" value="C">
+                        C) A guiding light of hope that pierces through the void.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q3en" value="D">
+                        D) A boundless abyss where all stars are destroyed.
+                    </label>
+                </div>
+                <h2>4. When your comrade's breath falters beneath a godless blade, how do you mend the final thread?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q4en" value="A" required>
+                        A) By charging forth, a shield against the coming dread.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4en" value="B">
+                        B) By unleashing ancient magic, wrath upon the night.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4en" value="C">
+                        C) By bargaining with Death, holding breath in the fading light.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q4en" value="D">
+                        D) By recalling every shared moment, like a mournful song.
+                    </label>
+                </div>
+                <h2>5. A shattered tome proclaims: 'Only that which bleeds true endures.' How do you answer this grim decree?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q5en" value="A" required>
+                        A) You mend your wounds with hope's gleaming artistry.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5en" value="B">
+                        B) You tear the prophecy, from its paper's lie set free.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5en" value="C">
+                        C) You master every symbol, till your mind transcends its hold.
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5en" value="D">
+                        D) You burn the script, trusting fate's story yet untold.
+                    </label>
+                </div>
+                <h2>6. As the moon's smile cracks and the cosmos sighs undone, what final promise seals your mortal coil?</h2>
+                <div class="question-block">
+                    <label class="option-label">
+                        <input type="radio" name="q6en" value="A" required>
+                        A) "By friends' steadfast eyes, my resolve shall never soil."
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6en" value="B">
+                        B) "By hidden truths unveiled, I'll quell the whispered fright."
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6en" value="C">
+                        C) "By blood's sacred oath, I'll shatter unseen might."
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q6en" value="D">
+                        D) "By life and death's eternal dance, I'll rebirth dawn's light."
+                    </label>
+                </div>
+                <button type="submit" class="submit-button">Reveal Your Path of Trials</button>
+            </form>
+            <div id="resultsEn" class="hidden results-section">
+                <h2>The Path of Trials for <span id="displayPlayerNameEn"></span></h2>
+                <div class="riddle-text" id="riddleResultEn"></div>
+                <button id="resetButtonEn" class="reset-button">Take the quiz again</button>
+            </div>
+        </div>
     </div>
-
-    <div class="word-group" aria-label="Letters from NO">
-      <div class="word-label">NO</div>
-      <div class="letter-pool" data-word="NO">
-        <div class="letter" draggable="true" data-word="NO" data-letter="N">N</div>
-        <div class="letter" draggable="true" data-word="NO" data-letter="O">O</div>
-      </div>
-    </div>
-
-    <div class="word-group" aria-label="Letters from WORLD">
-      <div class="word-label">WORLD</div>
-      <div class="letter-pool" data-word="WORLD">
-        <div class="letter" draggable="true" data-word="WORLD" data-letter="W">W</div>
-        <div class="letter" draggable="true" data-word="WORLD" data-letter="O">O</div>
-        <div class="letter" draggable="true" data-word="WORLD" data-letter="R">R</div>
-        <div class="letter" draggable="true" data-word="WORLD" data-letter="L">L</div>
-        <div class="letter" draggable="true" data-word="WORLD" data-letter="D">D</div>
-      </div>
-    </div>
-
-    <div class="word-group" aria-label="Letters from TO">
-      <div class="word-label">TO</div>
-      <div class="letter-pool" data-word="TO">
-        <div class="letter" draggable="true" data-word="TO" data-letter="T">T</div>
-        <div class="letter" draggable="true" data-word="TO" data-letter="O">O</div>
-      </div>
-    </div>
-
-    <div class="word-group" aria-label="Letters from RETURN">
-      <div class="word-label">RETURN</div>
-      <div class="letter-pool" data-word="RETURN">
-        <div class="letter" draggable="true" data-word="RETURN" data-letter="R">R</div>
-        <div class="letter" draggable="true" data-word="RETURN" data-letter="E">E</div>
-        <div class="letter" draggable="true" data-word="RETURN" data-letter="T">T</div>
-        <div class="letter" draggable="true" data-word="RETURN" data-letter="U">U</div>
-        <div class="letter" draggable="true" data-word="RETURN" data-letter="R">R</div>
-        <div class="letter" draggable="true" data-word="RETURN" data-letter="N">N</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Drop slots for ALONE -->
-  <div class="slots" aria-label="Puzzle slots to drop letters" role="list">
-    <div class="slot" data-position="0" aria-label="Slot for letter A" role="listitem" tabindex="0"></div>
-    <div class="slot" data-position="1" aria-label="Slot for letter L" role="listitem" tabindex="0"></div>
-    <div class="slot" data-position="2" aria-label="Slot for letter O" role="listitem" tabindex="0"></div>
-    <div class="slot" data-position="3" aria-label="Slot for letter N" role="listitem" tabindex="0"></div>
-    <div class="slot" data-position="4" aria-label="Slot for letter E" role="listitem" tabindex="0"></div>
-  </div>
-
-  <button id="unlock-btn" class="unlock-btn" aria-label="Attempt to unlock the puzzle door">Unlock</button>
-  <div id="result-message" class="result" aria-live="polite"></div>
-</div>
-
-<footer>Vecna: Eve of Ruin — Dolindar Tomb Puzzle</footer>
-
-<script>
-(() => {
-  const slots = document.querySelectorAll('.slot');
-  const letters = document.querySelectorAll('.letter');
-  const unlockBtn = document.getElementById('unlock-btn');
-  const resultEl = document.getElementById('result-message');
-
-  // To track what letter is in each slot
-  let slotLetters = Array(slots.length).fill(null);
-
-  // Track letter origin for returning on removal
-  const letterOrigins = new Map();
-
-  letters.forEach(letter => {
-    letter.addEventListener('dragstart', e => {
-      e.dataTransfer.setData('text/plain', letter.dataset.letter);
-      e.dataTransfer.setData('text/word', letter.dataset.word);
-      letter.classList.add('dragging');
+    <script src="script.js"></script>
+    <script>
+    // Language Switcher
+    const btnTh = document.getElementById('btn-th');
+    const btnEn = document.getElementById('btn-en');
+    const contentTh = document.getElementById('quiz-content-th');
+    const contentEn = document.getElementById('quiz-content-en');
+    btnTh.addEventListener('click', () => {
+        contentTh.style.display = '';
+        contentEn.style.display = 'none';
+        document.documentElement.lang = 'th';
     });
-
-    letter.addEventListener('dragend', e => {
-      letter.classList.remove('dragging');
+    btnEn.addEventListener('click', () => {
+        contentTh.style.display = 'none';
+        contentEn.style.display = '';
+        document.documentElement.lang = 'en';
     });
-  });
-
-  slots.forEach(slot => {
-    slot.addEventListener('dragover', e => {
-      e.preventDefault();
-      slot.classList.add('hovered');
-    });
-
-    slot.addEventListener('dragleave', e => {
-      slot.classList.remove('hovered');
-    });
-
-    slot.addEventListener('drop', e => {
-      e.preventDefault();
-      slot.classList.remove('hovered');
-
-      const draggedLetter = e.dataTransfer.getData('text/plain');
-      const draggedWord = e.dataTransfer.getData('text/word');
-
-      // Check if this slot already filled: if yes, return old letter to pool
-      const pos = Number(slot.dataset.position);
-      if (slotLetters[pos]) {
-        returnLetterToPool(slotLetters[pos]);
-      }
-
-      // Check if letter from this word already placed in another slot — only one letter per word allowed
-      for(let i = 0; i < slotLetters.length; i++) {
-        if(slotLetters[i] && slotLetters[i].word === draggedWord) {
-          // Return that letter to pool
-          returnLetterToPool(slotLetters[i]);
-          slotLetters[i] = null;
-          slots[i].textContent = '';
-          slots[i].classList.remove('filled');
-          break;
-        }
-      }
-
-      // Remove letter from pool UI
-      removeLetterFromPool(draggedLetter, draggedWord);
-
-      // Place letter in slot
-      slot.textContent = draggedLetter;
-      slot.classList.add('filled');
-
-      // Save slot letter info
-      slotLetters[pos] = { letter: draggedLetter, word: draggedWord };
-      clearResult();
-    });
-  });
-
-  // Clicking a slot removes the letter and returns it to pool
-  slots.forEach(slot => {
-    slot.addEventListener('click', () => {
-      const pos = Number(slot.dataset.position);
-      if (slotLetters[pos]) {
-        returnLetterToPool(slotLetters[pos]);
-        slotLetters[pos] = null;
-        slot.textContent = '';
-        slot.classList.remove('filled');
-        clearResult();
-      }
-    });
-  });
-
-  function removeLetterFromPool(letter, word) {
-    // Find the letter div in pool and hide it
-    const pool = document.querySelector(`.letter-pool[data-word="${word}"]`);
-    if (!pool) return;
-    const letterDiv = Array.from(pool.children).find(div => div.dataset.letter === letter && !div.classList.contains('used'));
-    if (letterDiv) {
-      letterDiv.classList.add('used');
-      letterDiv.style.visibility = 'hidden';
-    }
-  }
-
-  function returnLetterToPool(slotLetterObj) {
-    const pool = document.querySelector(`.letter-pool[data-word="${slotLetterObj.word}"]`);
-    if (!pool) return;
-    const letterDiv = Array.from(pool.children).find(div => div.dataset.letter === slotLetterObj.letter && div.classList.contains('used'));
-    if (letterDiv) {
-      letterDiv.classList.remove('used');
-      letterDiv.style.visibility = 'visible';
-    }
-  }
-
-  function clearResult() {
-    resultEl.textContent = '';
-    resultEl.className = 'result';
-  }
-
-  unlockBtn.addEventListener('click', () => {
-    // Check if all slots filled
-    if (slotLetters.some(l => l === null)) {
-      resultEl.textContent = 'Please fill all slots with letters.';
-      resultEl.className = 'result failure';
-      return;
-    }
-
-    // Desired code ALONE, slots order: 0:A,1:L,2:O,3:N,4:E
-    const correct = ['A','L','O','N','E'];
-    const userCode = slotLetters.map(l => l.letter);
-
-    let isCorrect = correct.every((ch, i) => ch === userCode[i]);
-
-    if (isCorrect) {
-      resultEl.textContent = "✨ The door creaks open... The tomb yields its secrets. You have unlocked the Dolindar Tomb! ✨";
-      resultEl.className = 'result success';
-    } else {
-      resultEl.textContent = "⚠️ The runes glow briefly, but nothing happens. The code is incorrect.";
-      resultEl.className = 'result failure';
-    }
-  });
-})();
-</script>
-
+    </script>
 </body>
 </html>
